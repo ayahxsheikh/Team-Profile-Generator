@@ -24,4 +24,8 @@ class Employee {
     };
 };
 
+const e = new Employee('Matt', 1, 'mat@.com');
+
+e.getEmail();
+
 module.exports = Employee;
