@@ -38,19 +38,19 @@ function generateManager(){
      return inquirer.prompt([
         {
             name: "name",
-            message: "Please enter Manager's name"
+            message: "Please enter the Manager's name"
         },
         {
             name: "id",
-            message: "Enter the manager's employee Id"
+            message: "Enter the Manager's employee Id"
         },
         {
             name: "email",
-            message: "Enter manager's email address"
+            message: "Enter the Manager's email address"
         },
         {
             name: "number",
-            message: "Lastly, please eneter the manager's office number"
+            message: "Lastly, please eneter the Manager's office number"
         }
 
     ]).then (data => {
@@ -63,7 +63,7 @@ function generateManager(){
     });
 };
 
-// function to build next team members
+// function that prompts user to build next team members
 function buildTeam(){
     inquirer.prompt([
         {
@@ -75,15 +75,41 @@ function buildTeam(){
     ]).then(data =>{
         if(data.addMember === "Engineer"){
             console.log("You can now build an engineer")
-            buildEngineer();
+            generateEngineer();
+
         } else if (data.addMember === "Intern"){
             console.log("You can now build an Intern")
-            buildIntern();
+            generateIntern();
         };
     });
 };
 
-
+// function to generate new engineer based on user input
+function generateEngineer(){
+    return inquirer.prompt([
+        {
+            name: "name",
+            message: "Enter the new Engineer's name"
+        },
+        {
+            name: "id",
+            message: "Enter the new Engineer's employee Id"
+        },
+        {
+            name: "email",
+            message: "Enter the new Engineer's email address"
+        },
+        {
+            name: "github",
+            message: "Lastly, enter the Engineer's GitHub username"
+        }
+    ]).then(data => {
+        let engineer = new Engineer(data.name, data.id, data.email, data.github);
+        team.push(engineer);
+        console.log(engineer);
+        buildTeam();
+    });
+};
 
 
 
