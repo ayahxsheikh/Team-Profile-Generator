@@ -1,10 +1,10 @@
 const Manager = require("./starter/lib/Manager");
-// const Employee = require("./starter/lib/Employee");
 const Engineer = require("./starter/lib/Engineer");
 const Intern = require("./starter/lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+// const team = require("./starter/src/page-template");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -16,6 +16,7 @@ const render = require("./starter/src/page-template.js");
 
 const team = [];
 
+// funciton to display main menu/add team members 
 function mainMenu(){
  inquirer.prompt({
     name: "confirm",
@@ -27,14 +28,14 @@ function mainMenu(){
         generateManager();
     } else if (data.confirm === 'yes') {
         console.log("Add another team member");
-        // buildTeam();
+        buildTeam();
     };
 });
 };
 
+// function to generate manager
 function generateManager(){
-  
-     const managerQ = inquirer.prompt([
+     return inquirer.prompt([
         {
             name: "name",
             message: "Please enter Manager's name"
@@ -55,9 +56,32 @@ function generateManager(){
     ]).then (data => {
         team.push(data);
         console.log(team);
-    
+        buildTeam();
+        
     });
 };
+
+// function to build next team members
+function buildTeam(){
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "addMember",
+            message:"What member do you want on your team?",
+            choices: ["Engineer", "Intern"]
+        }
+    ]).then(data =>{
+        if(data.addMember === "Engineer"){
+            console.log("You can now build an engineer")
+            buildEngineer();
+        } else if (data.addMember === "Intern"){
+            console.log("You can now build an Intern")
+            buildIntern();
+        };
+    });
+};
+
+
 
 
 

@@ -25,8 +25,4 @@ class Employee {
  };
 
 
-const e = new Employee("Alice", 20, "alice@test.com");
-
-e.getName();
-
 module.exports = Employee;
