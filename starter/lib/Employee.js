@@ -8,24 +8,25 @@ class Employee {
     };
 
     getName(){
-        console.log(this.name)
-    };
+        return this.name;
+     };
+ 
+     getId(){
+        return this.id
+     };
+ 
+     getEmail(){
+        return this.email
+     };
+ 
+     getRole(){
+        return 'Employee';
+     };
+ };
 
-    getId(){
-        console.log(this.id)
-    };
 
-    getEmail(){
-        console.log(this.email)
-    };
+const e = new Employee("Alice", 20, "alice@test.com");
 
-    getRole(){
-        return console.log('Employee');
-    };
-};
-
-const e = new Employee('Matt', 1, 'mat@.com');
-
-e.getEmail();
+e.getName();
 
 module.exports = Employee;
