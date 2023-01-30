@@ -13,3 +13,37 @@ const render = require("./starter/src/page-template.js");
 
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
+
+function generateManager(){
+    return inquirer.prompt([
+        {
+            name: "name",
+            message: "Please enter Manager's name"
+        },
+        {
+            name: "id",
+            message: "Enter the manager's employee Id"
+        },
+        {
+            name: "email",
+            message: "Enter manager's email address"
+        },
+        {
+            name: "office-no",
+            message: "Lastly, please eneter the manager's office number"
+        }
+
+    ]).then (data => {
+        console.log(data);
+    });
+};
+
+
+
+
+function init (){
+    console.log('-----Build Your Dream Team-----');
+    generateManager();
+}
+
+init();
