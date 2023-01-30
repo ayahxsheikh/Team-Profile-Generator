@@ -54,8 +54,10 @@ function generateManager(){
         }
 
     ]).then (data => {
-        team.push(data);
-        console.log(team);
+    // creates new manager object based assigs properties of Manager object based on user input
+        let manager = new Manager(data.name, data.id, data.email, data.number);
+        team.push(manager);
+        console.log(manager);
         buildTeam();
         
     });
