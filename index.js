@@ -14,8 +14,27 @@ const render = require("./starter/src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
+const team = [];
+
+function mainMenu(){
+ inquirer.prompt({
+    name: "confirm",
+    message: "Do you have a manager on your team?",
+    default: "yes/no"
+}).then(data => {
+    if(data.confirm === 'no'){
+        console.log("Let's start building your team!")
+        generateManager();
+    } else if (data.confirm === 'yes') {
+        console.log("Add another team member");
+        // buildTeam();
+    };
+});
+};
+
 function generateManager(){
-    return inquirer.prompt([
+  
+     const managerQ = inquirer.prompt([
         {
             name: "name",
             message: "Please enter Manager's name"
@@ -29,12 +48,14 @@ function generateManager(){
             message: "Enter manager's email address"
         },
         {
-            name: "office-no",
+            name: "number",
             message: "Lastly, please eneter the manager's office number"
         }
 
     ]).then (data => {
-        console.log(data);
+        team.push(data);
+        console.log(team);
+    
     });
 };
 
@@ -43,7 +64,7 @@ function generateManager(){
 
 function init (){
     console.log('-----Build Your Dream Team-----');
-    generateManager();
+    mainMenu();
 }
 
 init();
