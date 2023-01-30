@@ -70,7 +70,7 @@ function buildTeam(){
             type: "list",
             name: "addMember",
             message:"What member do you want on your team?",
-            choices: ["Engineer", "Intern"]
+            choices: ["Engineer", "Intern", "Team is Complete"]
         }
     ]).then(data =>{
         if(data.addMember === "Engineer"){
@@ -80,6 +80,10 @@ function buildTeam(){
         } else if (data.addMember === "Intern"){
             console.log("You can now build an Intern")
             generateIntern();
+
+        } else if (data.addMember === "Team is Complete") {
+            console.log("Generating Dream Team!..")
+            generateTeam();
         };
     });
 };
@@ -107,12 +111,42 @@ function generateEngineer(){
         let engineer = new Engineer(data.name, data.id, data.email, data.github);
         team.push(engineer);
         console.log(engineer);
+
+    // directs user back to adding another member
         buildTeam();
     });
 };
 
+// function creates new intern member based on user input
+function generateIntern(){
+    return inquirer.prompt([
+        {
+            name: "name",
+            message: "Enter new Intern's name"
+        },
+        {
+            name: "id",
+            message: "Enter Intern's employee ID"
+        },
+        {
+            name: "email",
+            message: "Enter Intern's email address"
+        },
+        {
+            name: "school",
+            message: "What school does the Intern attend?"
+        }
+    ]).then(data => {
+        let intern = new Intern(data.name, data.id, data.email, data.school);
+        team.push(intern);
+        console.log(intern);
+        buildTeam();
+    });
+};
 
-
+function generateTeam(){
+    
+};
 
 function init (){
     console.log('-----Build Your Dream Team-----');
