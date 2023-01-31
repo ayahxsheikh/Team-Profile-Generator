@@ -1,0 +1,39 @@
+body {
+    background-color: #e6d7cc;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.jumbotron{
+    background-color: #916f54;
+}
+
+h3{
+    color: #e6d7cc;
+}
+
+.team-area{
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card-header{
+    background-color: #b38867
+}
+
+.card-body{
+    background-color: #d1bfb1;
+}
+
+
+.list-group{
+    background-color: #D0B49F;
+}
+
+.list-group-item {
+    background-color: #fff7f0;
+}
+
+a {
+    color: #c0a13b; 
+}
