@@ -6,7 +6,7 @@ const team = require("./teamArray");
 
 // function that prompts user to build next team members
 function buildTeam(){
-    inquirer.prompt([
+    return inquirer.prompt([
         {
             type: "list",
             name: "addMember",

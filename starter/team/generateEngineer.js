@@ -1,7 +1,7 @@
 const Engineer = require("../lib/Engineer");
+const team = require("./teamArray");
 const buildTeam = require("./buildTeam");
 const inquirer = require("inquirer");
-const team = require("./teamArray");
 
 // function to generate new engineer based on user input
 function generateEngineer(){
@@ -25,9 +25,7 @@ function generateEngineer(){
     ]).then(data => {
         let engineer = new Engineer(data.name, data.id, data.email, data.github);
         team.push(engineer);
-        console.log(engineer);
-
-    // directs user back to adding another member
+        console.log(team);
         buildTeam();
     });
 };

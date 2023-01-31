@@ -32,6 +32,7 @@ function mainMenu(){
 
 
 
+
 // function generateTeam(){
     
 // };
@@ -39,6 +40,7 @@ function mainMenu(){
 function init (){
     console.log('-----Build Your Dream Team-----');
     mainMenu();
+    
 }
 
 init();
