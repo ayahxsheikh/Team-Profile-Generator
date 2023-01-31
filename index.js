@@ -13,7 +13,6 @@ const render = require("./starter/src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
-// team array
 let team = [];
 
 // funciton to display main menu/add team members 
@@ -57,7 +56,7 @@ function generateManager(){
    // creates new manager object based assigs properties of Manager object based on user input
        let manager = new Manager(data.name, data.id, data.email, data.number);
        team.push(manager);
-       console.log(team);
+    //    console.log(team);
        buildTeam();
        return team;
    });
@@ -82,7 +81,6 @@ function buildTeam(){
             generateIntern();
 
         } else if (data.addMember === "Team is Complete") {
-            console.log("Generating Dream Team!..")
             generateTeam();
         };
     });
@@ -110,7 +108,7 @@ function generateEngineer(){
     ]).then(data => {
         let engineer = new Engineer(data.name, data.id, data.email, data.github);
         team.push(engineer);
-        console.log(team);
+        // console.log(team);
         buildTeam();
         return team;
     });
@@ -138,13 +136,16 @@ function generateIntern(){
     ]).then(data => {
         let intern = new Intern(data.name, data.id, data.email, data.school);
         team.push(intern);
-        console.log(team);
+        // console.log(team);
         buildTeam();
         return team;
     });
 };
 
+// takes in team array and generates html file based on user's inputs
 function generateTeam(){
+    console.log("Generating Dream Team!..");
+
     fs.writeFile(path.join(__dirname, 'output', 'team.html'), render(team), (err) =>{
         if (err) throw err;
     });
