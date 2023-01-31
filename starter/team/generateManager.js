@@ -1,5 +1,7 @@
 const Manager = require("../lib/Manager");
 const buildTeam = require("./buildTeam");
+const inquirer = require("inquirer");
+const team = require("./teamArray");
 
 // function to generate manager
 function generateManager(){

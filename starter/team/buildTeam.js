@@ -1,6 +1,8 @@
 const generateEngineer = require("./generateEngineer");
 const generateIntern = require("./generateIntern");
-const generateTeam = require("./generateTeam");
+const inquirer = require("inquirer");
+const team = require("./teamArray");
+// const generateTeam = require("./generateTeam");
 
 // function that prompts user to build next team members
 function buildTeam(){
@@ -22,7 +24,7 @@ function buildTeam(){
 
         } else if (data.addMember === "Team is Complete") {
             console.log("Generating Dream Team!..")
-            generateTeam();
+            // generateTeam();
         };
     });
 };

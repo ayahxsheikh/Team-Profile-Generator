@@ -1,5 +1,7 @@
 const Intern = require("../lib/Intern");
+const inquirer = require("inquirer");
 const buildTeam = require("./buildTeam");
+const team = require("./teamArray");
 
 // function creates new intern member based on user input
 function generateIntern(){
@@ -23,7 +25,7 @@ function generateIntern(){
     ]).then(data => {
         let intern = new Intern(data.name, data.id, data.email, data.school);
         team.push(intern);
-        console.log(intern);
+        console.log(team);
         buildTeam();
     });
 };
