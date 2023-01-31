@@ -1,5 +1,5 @@
 const Manager = require("../lib/Manager");
-const buildTeam = require("");
+const buildTeam = require("./buildTeam");
 
 // function to generate manager
 function generateManager(){
