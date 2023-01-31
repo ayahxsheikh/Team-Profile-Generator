@@ -59,6 +59,7 @@ function generateManager(){
        team.push(manager);
        console.log(team);
        buildTeam();
+       return team;
    });
 };
 
@@ -82,7 +83,7 @@ function buildTeam(){
 
         } else if (data.addMember === "Team is Complete") {
             console.log("Generating Dream Team!..")
-            // generateTeam();
+            generateTeam();
         };
     });
 };
@@ -111,6 +112,7 @@ function generateEngineer(){
         team.push(engineer);
         console.log(team);
         buildTeam();
+        return team;
     });
 };
 
@@ -138,12 +140,15 @@ function generateIntern(){
         team.push(intern);
         console.log(team);
         buildTeam();
+        return team;
     });
 };
 
-// function generateTeam(){
-    
-// };
+function generateTeam(){
+    fs.writeFile(path.join(__dirname, 'output', 'team.html'), render(team), (err) =>{
+        if (err) throw err;
+    });
+};
 
 function init (){
     console.log('-----Build Your Dream Team-----');
