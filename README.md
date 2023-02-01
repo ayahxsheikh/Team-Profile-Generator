@@ -40,7 +40,7 @@ The application generates webpage that displays a team's basic info so that a us
 
 ---
 ## Installation 
-In order to use the readme-generator please adhere to the following guidelines:
+In order to start using the application please adhere to the following guidelines:
 
 Install Node.js to your computer
 
