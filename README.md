@@ -70,5 +70,10 @@ The following image shows a mock-up of the generated HTML’s appearance and fun
 ![Javascipt](https://img.shields.io/badge/Javascipt-a8a232)
 ![NodeJS](https://img.shields.io/badge/-Node.js-green)
 
+
+## Links
+
+Walk-through Video Link: https://drive.google.com/file/d/1hiXSjBrqb_3HS1fAcgWWNX5TomRgXJQk/view 
+
 ---
 © ASheikh
