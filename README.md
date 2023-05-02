@@ -10,7 +10,6 @@ The application generates webpage that displays a team's basic info so that a us
   - [Installation](#installation)
   - [Usage](#usage)
   - [Technologies](#technologies)
-  - [Links](#links)
 
 ## Description
 
@@ -41,7 +40,7 @@ The application generates webpage that displays a team's basic info so that a us
 
 ---
 ## Installation 
-In order to use the readme-generator please adhere to the following guidelines:
+In order to start using the application please adhere to the following guidelines:
 
 Install Node.js to your computer
 
@@ -61,7 +60,7 @@ The application will be invoked by using the following command:
 
 The following image shows a mock-up of the generated HTML’s appearance and functionality:
 
-![Image](./Assets/myteam.png)
+![Image](./assets/myteam.png)
 
 ---
 
